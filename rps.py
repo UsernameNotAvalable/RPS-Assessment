@@ -34,36 +34,39 @@ print ("Welcome ", player1, " and ", player2, " let's begin the game!")
 player1InputAttempt = 1
 player2InputAttempt = 1
 
+acceptableInput = ["rock", "scissors", "paper", "Rock", "Scissors", "Paper"]
+
+
+player1Input = input(player1 + "," + " please choose one of the 3 listed options: rock, paper or scissors: ")
+
 #doubled up with no function due to limitations of knowledge when this code was written, kept and not upgraded for future reference of knowledge.
 #verification for 
+# #The counter is simply there for fun and exploring different ways to implement things within code.
 while True:
-    player1Input = input(player1 + "," + " please choose one of the 3 listed options: rock, paper or scissors: ")
-    if player1Input.lower == "rock" or "scissors" or "paper":
+    if player1Input in acceptableInput:
         break
-    elif
-    print("Please type in the options with a lower or upper case. ")
-#The counter is simply there for fun and exploring different ways to implement things within code.
-    print("You're currently at attempt: ", player1InputAttempt)
-    player1InputAttempt = player1InputAttempt + 1
     else:
-        break
-        
+        print("Please type in the options with a lower or upper case. ")
+        print("You're currently at attempt: ", player1InputAttempt)
+        player1InputAttempt = player1InputAttempt + 1
+        player1Input = input(player1 + "Please choose one of the choices; rock, paper or scissors:")
+
+
+
+player2Input = input(player2 + "," + " please choose one of the 3 listed options: rock, paper or scissors: ")
 
 #repeat for player 2 verification.
 while True:
-    player2Input = input(player2 + "," + " please choose one of the 3 listed options: rock, paper or scissors: ")
-    if player2Input.lower == "rock" or "scissors" or "paper":
+    if player2Input in acceptableInput:
         break
-    elif print("Please type in the options with a lower or upper case. ")
+    else:
+        print("Please type in the options with a lower or upper case. ")
         print("You're currently at attempt: ", player2InputAttempt)
         player2InputAttempt = player2InputAttempt + 1
-    else:
-        break
+        player2Input = input(player2 + "Please choose one of the choices; rock, paper or scissors:")
 
-
-player1Input = player1Input.lower
-player2Input = player2Input.lower
-
+player1Input = player1Input.lower()
+player2Input = player2Input.lower()
 '''
 Basic psuedo code of outputs
 if player 1 == player 2 draw
@@ -83,21 +86,24 @@ else player 1 wins
 #checking for a draw before going into winning scenarios
 if player1Input == player2Input:
     print("It was a draw!")
-
 #All player 2 winning scnarios with a default of player 1 wins after.
-elif player2Input == "rock" and player1Input == "scissors":
+elif player2Input == "rock" and player1Input != "paper":
     print("Player 2 wins!")
 
-elif player2Input == "scissors" and player1Input == "paper":
+elif player2Input == "scissors" and player1Input != "rock":
     print("Player 2 wins!")
 
-elif player2Input == "paper" and player1Input == "rock":
+elif player2Input == "paper" and player1Input != "scissors":
     print("Player 2 wins!")
-
+    
 else:
     print("Player 1 wins!")
 
-print("Thank you for playing! I hope you play again.")
+print(player1, "Chose:", player1Input)
+
+print(player2, "Chose:", player2Input)
+
+print("Thank you for playing!")
 Finished()
 
 
