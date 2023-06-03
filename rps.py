@@ -1,10 +1,11 @@
+#Finished function for keeping terminal open during usage of users.
 def Finished():
     task_done = input ("When you are finished reading, please press enter to end program.")
 
 
 player1 = input ("Please state your name player 1: ")
 
-
+#input validation of no digits within the names. Symbols skipped over due to limitation of knowledge at time of coding. 
 while True:
     if any (char.isdigit() for char in player1):
         print ("Please do not include digits in your name.")
@@ -15,7 +16,7 @@ while True:
 
 player2 = input ("Player 2, please state your name: ")
 
-
+#input validation of no digits within the names. A double up on names results in a retry of name input.
 while True:
     if any (char.isdigit() for char in player2):
         print ("Please do not include digits in your name.")
@@ -29,28 +30,39 @@ while True:
 
 print ("Welcome ", player1, " and ", player2, " let's begin the game!")
 
+#player attempt counting for fun
 player1InputAttempt = 1
 player2InputAttempt = 1
 
+#doubled up with no function due to limitations of knowledge when this code was written, kept and not upgraded for future reference of knowledge.
+#verification for 
 while True:
-    player1Input = input(player1 + " please choose one of the 3 listed options: rock, paper or scissors: ")
+    player1Input = input(player1 + "," + " please choose one of the 3 listed options: rock, paper or scissors: ")
     if player1Input.lower == "rock" or "scissors" or "paper":
         break
-    else:
-        print("Please type in the options with a lower or upper case. ")
+    elif
+    print("Please type in the options with a lower or upper case. ")
 #The counter is simply there for fun and exploring different ways to implement things within code.
-        print("You're currently at attempt: ", player1InputAttempt)
-        player1InputAttempt = player1InputAttempt + 1
+    print("You're currently at attempt: ", player1InputAttempt)
+    player1InputAttempt = player1InputAttempt + 1
+    else:
+        break
+        
 
+#repeat for player 2 verification.
 while True:
-    player2Input = input(player2 + " please choose one of the 3 listed options: rock, paper or scissors: ")
+    player2Input = input(player2 + "," + " please choose one of the 3 listed options: rock, paper or scissors: ")
     if player2Input.lower == "rock" or "scissors" or "paper":
         break
-    else:
-        print("Please type in the options with a lower or upper case. ")
+    elif print("Please type in the options with a lower or upper case. ")
         print("You're currently at attempt: ", player2InputAttempt)
         player2InputAttempt = player2InputAttempt + 1
+    else:
+        break
 
+
+player1Input = player1Input.lower
+player2Input = player2Input.lower
 
 '''
 Basic psuedo code of outputs
@@ -68,10 +80,11 @@ player 2 Win
 else player 1 wins
 '''
 
-
+#checking for a draw before going into winning scenarios
 if player1Input == player2Input:
     print("It was a draw!")
 
+#All player 2 winning scnarios with a default of player 1 wins after.
 elif player2Input == "rock" and player1Input == "scissors":
     print("Player 2 wins!")
 
